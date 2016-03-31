@@ -15,10 +15,10 @@ Rottenpotatoes::Application.routes.draw do
   #   resources :products
   #resources :movies
   resources :movies do
-    #member do
-      #get 'similar'
-    #end
-    match 'similar' => 'movies#similar'
+    member do
+      get 'similar'
+    end
+    #match 'similar' => 'movies#similar'
   end
   # Sample resource route with options:
   #   resources :products do
