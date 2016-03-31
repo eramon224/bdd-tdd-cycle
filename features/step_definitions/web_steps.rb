@@ -49,11 +49,11 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^(?:|I )press "([^"]*)"$/ do |button|
+When(/^I press "(.*?)"$/) do |button|
   click_button(button)
 end
 
-When /^(?:|I )follow "([^"]*)"$/ do |link|
+When(/^I follow "(.*?)"$/) do |link|
   click_link(link)
 end
 
@@ -116,6 +116,7 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   if page.respond_to? :should
     page.should have_xpath('//*', :text => regexp)
   else
+  
     assert page.has_xpath?('//*', :text => regexp)
   end
 end
