@@ -25,11 +25,11 @@ module NavigationHelpers
     #when /^Find Movies With Same Director$/
     when /^the Similar Movies page for "(.*)"$/ then
       @movie = Movie.find_by_title($1)
-      #if (@movie.director.length == 0)
-       # "/movies"
-      #else
+      if (@movie.director.length == 0)
+        "/movies"
+      else
         "/movies/#{@movie.id}/similar"
-      #end
+      end
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
