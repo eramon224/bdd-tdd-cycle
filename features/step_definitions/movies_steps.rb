@@ -8,3 +8,7 @@ end
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |title, director|
   assert page.body =~ /#{title}.*Director:\s?#{director}/m
 end
+
+When(/^I see the link "(.*?)"$/) do |arg1|
+  page.should have_link arg1
+end
