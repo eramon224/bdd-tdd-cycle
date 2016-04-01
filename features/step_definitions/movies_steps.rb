@@ -12,3 +12,7 @@ end
 When(/^I see the link "(.*?)"$/) do |arg1|
   page.should have_link arg1
 end
+
+Then(/^I should see "(.*?)" before "(.*?)"$/) do |arg1, arg2|
+  page.body.should =~ /#{arg1}.*#{arg2}/m
+end
